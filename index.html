@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Vertical Containers</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .full-height {
+            height: 100%;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .background-container-1,
+        .background-container-2,
+        .venue-container,
+        .schedule-container,
+        .greeting-container {
+            background-size: cover;
+            color: #333;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        .background-container-1 { background: url('/mnt/data/image-XvJ39yFOh821G6Si62I1vQzC.png') no-repeat center center; }
+        .background-container-2 { background: url('/mnt/data/image-RXVEjHU4VELmevqpvg1j6PDG.png') no-repeat center center; }
+        .venue-container { background: url('/mnt/data/image-ijawX6rD4ZI4iwPk6Gbcy20m.png') no-repeat center center; }
+        .schedule-container { background: url('/mnt/data/image-CdxOBPsLvt9UygBPvQ82y7oq.png') no-repeat center center; }
+        .greeting-container { background: url('/mnt/data/image-YUabB6AgLh0axdrgq8dcKrwk.png') no-repeat center center; }
+        
+        .calendar {
+            border: 1px solid #333;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .calendar th, .calendar td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        .highlight {
+            position: relative;
+        }
+        .highlight::after {
+            content: '\2665'; /* Heart symbol */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: #f1797981;
+        }
+        .next-month {
+            color: #c3c3c3;
+        }
+        .background-container-1 h1,
+        .background-container-2 h1,
+        .venue-container h1,
+        .schedule-container h1,
+        .greeting-container h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .background-container-1 h2,
+        .venue-container h2,
+        .schedule-container h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .background-container-1 p,
+        .background-container-2 p,
+        .venue-container p,
+        .schedule-container p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .schedule-item::before {
+            content: '';
+            width: 2px;
+            height: 50px;
+            background: #333;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="background-container-1">
+                    <h1>ТИМУР</h1>
+                    <h2>&</h2>
+                    <h1>НАТАЛИЯ</h1>
+                    <p>ИЮЛЬ 30 2024</п>
+                    <p>ВТОРНИК</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="background-container-2">
+                    <h1>ДОРОГИЕ ГОСТИ!</h1>
+                    <p>ЭТОТ ДЕНЬ БУДЕТ<br>ДЛЯ НАС ОСОБЕННО ВАЖНЫМ, И МЫ ХОТИМ<br>ПРОВЕСТИ ЕГО В КРУГУ<br>БЛИЗКИХ И ДРУЗЕЙ!</p>
+                    <p>С БОЛЬШИМ УДОВОЛЬСТВИЕМ<br>ПРИГЛАШАЕМ ВАС<br>НА НАШУ СВАДЬБУ!</p>
+                    <div class="calendar">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="7">ИЮНЬ 2024</th>
+                                </tr>
+                                <tr>
+                                    <th>ПН</th>
+                                    <th>ВТ</th>
+                                    <th>СР</th>
+                                    <th>ЧТ</th>
+                                    <th>ПТ</th>
+                                    <th>СБ</th>
+                                    <th>ВС</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                    <td>20</td>
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td>29</td>
+                                    <td class="highlight">30</td>
+                                    <td>31</td>
+                                    <td class="next-month">1</td>
+                                    <td class="next-month">2</td>
+                                    <td class="next-month">3</td>
+                                    <td class="next-month">4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="venue-container">
+                    <h1>МЕСТО ПРОВЕДЕНИЯ</h1>
+                    <h2>РЕСТОРАН «БАЗИЛИКА»</h2>
+                    <p>ХИМКИ, НОВОГОРСК,<br>ЗАРЕЧНАЯ, ВЛ11</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="schedule-container">
+                    <h1>ПЛАН МЕРОПРИЯТИЯ</h1>
+                    <div class="schedule-item">
+                        <p>15:00<br>СБОР ГОСТЕЙ</п>
+                    </div>
+                    <div class="schedule-item">
+                        <п>15:30<br>ЦЕРЕМОНИЯ</п>
+                    </div>
+                    <div class="schedule-item">
+                        <п>15:45<br>БАНКЕТ</п>
+                    </div>
+                    <div class="schedule-item">
+                        <п>23:00<br>ОКОНЧАНИЕ МЕРОПРИЯТИЯ</п>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="greeting-container">
+                    <h1>БУДЕМ ОЧЕНЬ РАДЫ ВИДЕТЬ ВАС НА НАШЕМ ТОРЖЕСТВЕ!</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Инициализация Swiper
+        const swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            mousewheel: {
+                invert: false,
+            },
+            touchRatio: 1,
+            simulateTouch: true,
+        });
+    </script>
+</body>
+</html>
