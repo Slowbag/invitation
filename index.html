@@ -6,6 +6,7 @@
     <title>Responsive Vertical Containers</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <style>
         html, body {
             height: 100%;
@@ -31,14 +32,12 @@
         .calendar {
             border: 1px solid #333;
             padding: 10px;
-
-            background-color: #f7e9df;
+            background-color: #f7e9df36;
             border-radius: 15px;
-
-            width: 65dvh;
+            width: 48dvh;
         }
         .calendar table {
-            width: 100%;
+            width: 45dvh;
             border-collapse: collapse;
             text-align: center;
         }
@@ -72,7 +71,7 @@
         }
         .background-container-1 p,
         .background-container-2 p {
-            font-size: 1.5rem;
+            font-size: 18px;
             margin: 0;
         }
         .venue-container h1 {
@@ -103,6 +102,7 @@
             display: flex;
             align-items: center;
             margin: 20px 0;
+            justify-content: center;
         }
         .schedule-item::before {
             content: '';
@@ -120,9 +120,67 @@
           display: flex;
           justify-content: center;
         }
+
+        .contMap{
+            display: flex;
+            justify-content: center;
+        }
+
+        #map1, #map2  > ymaps {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Цветы */
+        .img_l, .img_r{
+            z-index: 0;
+        }
+
+        .img_l{
+            position: fixed;
+            display: flex;
+            width: 100%;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            margin-left: -7dvh;
+        }
+        .img_r{
+            position: fixed;
+            display: flex;
+            bottom: 0px;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-left: 7dvh;
+        }
+
+        .m-img-top{
+            margin-bottom: -50px;
+            rotate: 40deg;
+        }
+        .m-img-bott{
+            margin-bottom: -50px;
+            rotate: 340deg;
+        }
     </style>
 </head>
 <body>
+
+<div class="img_l">
+    <img class="m-img-bott" src="./content/photo (3).png">
+    <img class="m-img-bott" src="./content/photo (2).png">
+    <img class="m-img-bott" src="./content/photo.png">
+    <img class="m-img-bott" src="./content/Layer_4.png">
+    <img class="m-img-bott" src="./content/Layer_3.png">
+</div>
+    
+<div class="img_r">
+    <img class="m-img-bott" src="./content/photo (3).png">
+    <img class="m-img-bott" src="./content/photo (2).png">
+    <img class="m-img-bott" src="./content/photo.png">
+    <img class="m-img-bott" src="./content/Layer_4.png">
+    <img class="m-img-bott" src="./content/Layer_3.png">
+</div>
 
 <div id="fullpage">
     <div class="section background-container-1">
@@ -133,10 +191,11 @@
         <p>ВТОРНИК</p>
     </div>
     <div class="section background-container-2">
-        <h1>ДОРОГИЕ ГОСТИ!</h1>
-        <p>ЭТОТ ДЕНЬ БУДЕТ<br>ДЛЯ НАС ОСОБЕННО ВАЖНЫМ, И МЫ ХОТИМ<br>ПРОВЕСТИ ЕГО В КРУГУ<br>БЛИЗКИХ И ДРУЗЕЙ!</p>
-        <p>С БОЛЬШИМ УДОВОЛЬСТВИЕМ<br>ПРИГЛАШАЕМ ВАС<br>НА НАШУ СВАДЬБУ!</p>
-        <div class="conteinerCalendar">
+        <h3>ДОРОГИЕ ГОСТИ!</h3>
+        <p>ЭТОТ ДЕНЬ БУДЕТ<br>ДЛЯ НАС ОСОБЕННО ВАЖНЫМ,<br> И МЫ ХОТИМ<br>ПРОВЕСТИ ЕГО В КРУГУ<br>БЛИЗКИХ!</p>
+        
+        <p>С БОЛЬШИМ УДОВОЛЬСТВИЕМ<br>ПРИГЛАШАЕМ ВАС<br>НА НАШ ПРАЗДНИК!</p>
+        <div class="conteinerCalendar pt-3">
           <div class="calendar">
             <table>
                 <thead>
@@ -206,27 +265,31 @@
         
     </div>
     <div class="section venue-container">
-        <h1>МЕСТО ПРОВЕДЕНИЯ</h1>
-        <h2>РЕСТОРАН «БАЗИЛИКА»</h2>
-        <p>ХИМКИ, НОВОГОРСК,<br>ЗАРЕЧНАЯ, ВЛ11</p>
+        <h3 style="margin-top: 12dvh;">МЕСТО РЕГИСТРАЦИИ<br>БРАКА</h3>
+        <div class="contMap">
+            <div id="map1" style="width: 80%; height: 500px;"></div>   
+        </div>
+    </div>
+    <div class="section venue-container">
+        <h3 style="margin-top: 12dvh;">МЕСТО ПРАЗДНОВАНИЯ</h3>
+        <div class="contMap">
+            <div id="map2" style="width: 80%; height: 500px;"></div>   
+        </div>
     </div>
     <div class="section schedule-container">
-        <h1>ПЛАН МЕРОПРИЯТИЯ</h1>
+        <h3 >ПЛАН МЕРОПРИЯТИЯ</h3>
         <div class="schedule-item">
-            <p>15:00<br>СБОР ГОСТЕЙ</p>
+            <p>13:15<br>РЕГИСТРАЦИЯ БРАКА</p>
         </div>
         <div class="schedule-item">
-            <p>15:30<br>ЦЕРЕМОНИЯ</p>
+            <p>13:30<br>ФОТОСЕССИЯ</p>
         </div>
         <div class="schedule-item">
-            <p>15:45<br>БАНКЕТ</p>
-        </div>
-        <div class="schedule-item">
-            <p>23:00<br>ОКОНЧАНИЕ МЕРОПРИЯТИЯ</п>
+            <p>14:45<br>СЕМЕЙНОЕ ЗАСТОЛЬЕ</p>
         </div>
     </div>
-    <div class="section greeting-container">
-        <h1>БУДЕМ ОЧЕНЬ РАДЫ ВИДЕТЬ ВАС НА НАШЕМ ТОРЖЕСТВЕ!</h1>
+    <div class="section greeting-container pl-4 pr-4">
+        <h3>БУДЕМ ОЧЕНЬ РАДЫ ВИДЕТЬ<br>ВАС НА НАШЕМ ТОРЖЕСТВЕ!</h3>
     </div>
 </div>
 
@@ -240,6 +303,34 @@
             navigation: true,
             navigationPosition: 'right',
         });
+
+        ymaps.ready(init);
+
+        function init(){
+            var map1 = new ymaps.Map("map1", {
+                center: [56.146289, 47.216639],
+                zoom: 17,
+                controls: []
+            });
+            var placemark1 = new ymaps.Placemark([56.146289, 47.216639], {
+                hintContent: 'Место регистрации брака',
+                balloonContent: 'Место регистрации брака'
+            });
+            map1.geoObjects.add(placemark1);
+            map1.behaviors.disable('scrollZoom');
+
+            var map2 = new ymaps.Map("map2", {
+                center: [56.134050, 47.247638],
+                zoom: 17,
+                controls: []
+            });
+            var placemark2 = new ymaps.Placemark([56.134050, 47.247638], {
+                hintContent: 'Место празднования',
+                balloonContent: 'Место празднования "Больше чем мясо"'
+            });
+            map2.geoObjects.add(placemark2);
+            map2.behaviors.disable('scrollZoom');
+        }
     });
 </script>
 </body>
